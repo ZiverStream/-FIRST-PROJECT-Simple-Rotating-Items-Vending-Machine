@@ -79,7 +79,6 @@ if foodOrDrink.lower() == "drink":
           print("ERROR:ITEM NOT IN STOCK")
           exit()
       Balance -= drinkPricesInOrderCOPY[i]
-      print(Balance)
 if Balance == balanceCopy and foodOrDrink.lower() == "drink":
   print("ERROR:INVALID ITEM ENTERED")
   exit()
@@ -92,7 +91,6 @@ if foodOrDrink.lower() == "food":
           print("ERROR:ITEM NOT IN STOCK")
           exit()
       Balance -= foodPricesInOrderCOPY[i]
-      print(Balance)
 if Balance == balanceCopy and foodOrDrink.lower() == "food":
   print("ERROR:INVALID ITEM ENTERED")
   exit()
@@ -124,7 +122,6 @@ while continue1.lower() == "yes":
             print("ERROR:ITEM NOT IN STOCK")
             exit()
         Balance -= drinkPricesInOrderCOPY[i]
-        print(Balance)
   if Balance == balanceCopy and foodOrDrink.lower() == "drink":
     print("ERROR:INVALID ITEM ENTERED")
     exit()
@@ -137,7 +134,6 @@ while continue1.lower() == "yes":
             print("ERROR:ITEM NOT IN STOCK")
             exit()
         Balance -= foodPricesInOrderCOPY[i]
-        print(Balance)
   if Balance == balanceCopy and foodOrDrink.lower() == "food":
     print("ERROR:INVALID ITEM ENTERED")
     exit()
