@@ -19,14 +19,12 @@ def randomItems(drinkLst, foodLst, drinkPrcLst, foodPrcLst):
   for i in range(3):
     random1 = random.randint(0, len(drinkLst) - 1)
     print(str(i + 1) + ": " + str(drinkLst[random1]) + " ---> $" + str(drinkPrcLst[random1]))
-    fillerDrink.append(random1)
     drinkLst.pop(random1)
     drinkPrcLst.pop(random1)
   print("\nFOOD UP FOR SALE\n________________")
   for i in range(3):
     random1 = random.randint(0, len(foodLst) - 1)
     print(str(i + 1) + ": " + str(foodLst[random1]) + " ---> $" + str(foodPrcLst[random1]))
-    fillerFood.append(random1)
     foodLst.pop(random1)
     foodPrcLst.pop(random1)
 
@@ -45,6 +43,13 @@ def checkNegative(money):
   if money < 0:
     print("ERROR:NEGATIVE VALUE ENTERED") 
     exit()
+
+#Checks how many items you have
+def itemList(lst1, lst2):
+  print("Foods bought:")
+  print(lst1)
+  print("Drinks bought:")
+  print(lst2)
 
 
 #MAIN
@@ -68,29 +73,34 @@ else:
 if foodOrDrink.lower() == "drink":
   for i in range(6):
     if option.lower() == drinksCOPY[i].lower():
+      fillerDrink.append(drinksCOPY[i])
       for i in range(2):
         if option.lower() == drinks[i].lower():
           print("ERROR:ITEM NOT IN STOCK")
           exit()
       Balance -= drinkPricesInOrderCOPY[i]
+      print(Balance)
 if Balance == balanceCopy and foodOrDrink.lower() == "drink":
   print("ERROR:INVALID ITEM ENTERED")
   exit()
 if foodOrDrink.lower() == "food":
   for i in range(6):
     if option.lower() == foodCOPY[i].lower():
+      fillerFood.append(foodCOPY[i])
       for i in range(2):
         if option.lower() == food[i].lower():
           print("ERROR:ITEM NOT IN STOCK")
           exit()
       Balance -= foodPricesInOrderCOPY[i]
+      print(Balance)
 if Balance == balanceCopy and foodOrDrink.lower() == "food":
   print("ERROR:INVALID ITEM ENTERED")
   exit()
 #After purchase of item, displays the value of the remaining balance.
 print("Your Balance is now $" + str(Balance)+ "\n_____________________")
 continue1 = input("DO YOU WANT TO SPEND MORE MONEY? (yes/no) \n")
-
+if continue1.lower() == "no":
+  itemList(fillerFood,fillerDrink)
 #Asks if the user wants to continue purchasing from the vending machine, if it is a "yes" then it will loop the code.
 while continue1.lower() == "yes":
   balanceCopy = Balance
@@ -108,25 +118,31 @@ while continue1.lower() == "yes":
   if foodOrDrink.lower() == "drink":
     for i in range(6):
       if option.lower() == drinksCOPY[i].lower():
+        fillerDrink.append(drinksCOPY[i])
         for i in range(2):
           if option.lower() == drinks[i].lower():
             print("ERROR:ITEM NOT IN STOCK")
             exit()
         Balance -= drinkPricesInOrderCOPY[i]
+        print(Balance)
   if Balance == balanceCopy and foodOrDrink.lower() == "drink":
     print("ERROR:INVALID ITEM ENTERED")
     exit()
   if foodOrDrink.lower() == "food":
     for i in range(6):
       if option.lower() == foodCOPY[i].lower():
+        fillerFood.append(foodCOPY[i])
         for i in range(2):
           if option.lower() == food[i].lower():
             print("ERROR:ITEM NOT IN STOCK")
             exit()
         Balance -= foodPricesInOrderCOPY[i]
+        print(Balance)
   if Balance == balanceCopy and foodOrDrink.lower() == "food":
     print("ERROR:INVALID ITEM ENTERED")
     exit()
   print("Your Balance is now $" + str(Balance)+ "\n_____________________")
   continue1 = input("DO YOU WANT TO SPEND MORE MONEY? (yes/no) \n")
- 
+  if continue1.lower() == "no":
+    itemList(fillerFood,fillerDrink)
+  
