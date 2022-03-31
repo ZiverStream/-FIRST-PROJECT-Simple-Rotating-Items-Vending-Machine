@@ -1,10 +1,10 @@
 import random
-#List of items that will be rotated through
 foodsPicked = []
 drinksPicked = []
 fillerFood = []
 fillerDrink = []
 contin1 = ""
+#List of items that will be rotated through
 drinks = ["Fanta", "Coke", "Sprite", "Pepsi", "Root Beer", "Vanilla Cream Soda"]
 food = ["Doritos", "Lay's", "Cheetos", "Ruffles", "Bugles", "Fruit Snacks"]
 drinkPricesInOrder = [2.55, 2.55, 2.55, 2.55, 2.55, 3.25]
