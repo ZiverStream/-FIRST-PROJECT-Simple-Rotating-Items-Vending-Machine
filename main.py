@@ -4,7 +4,6 @@ drinksPicked = []
 fillerFood = []
 fillerDrink = []
 contin1 = ""
-#List of items that will be rotated through
 drinks = ["Fanta", "Coke", "Sprite", "Pepsi", "Root Beer", "Vanilla Cream Soda"]
 food = ["Doritos", "Lay's", "Cheetos", "Ruffles", "Bugles", "Fruit Snacks"]
 drinkPricesInOrder = [2.55, 2.55, 2.55, 2.55, 2.55, 3.25]
@@ -118,7 +117,7 @@ def selectAndPay(Balance1):
   balHis = Balance1
 #Asks if the user wants to continue purchasing from the vending machine, if it is a "yes" then it will loop the code.
   continue1 = input("DO YOU WANT TO SPEND MORE MONEY? (yes/no) \n")
-  while continue1.lower() == "yes":
+  if continue1.lower() == "yes":
     selectAndPay(balHis)
 
 #MAIN
