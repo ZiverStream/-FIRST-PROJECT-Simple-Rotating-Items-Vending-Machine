@@ -84,13 +84,14 @@ def selectAndPay(Balance1):
     for i in range(6):
       if option.lower() == drinksCOPY[i].lower():
         fillerDrink.append(drinksCOPY[i])
+        Balance1 -= drinkPricesInOrderCOPY[i]
+        Balance1 = round(Balance1, 2)
         for i in range(2):
 #if item inputted is not in the machine, end process
           if option.lower() == drinks[i].lower():
             print("ERROR:ITEM NOT IN STOCK")
+            Balance1 = balanceCopy
             exit()
-        Balance1 -= drinkPricesInOrderCOPY[i]
-        Balance1 = round(Balance1, 2)
 #if there were no items purchased, end process
   if Balance1 == balanceCopy and foodOrDrink.lower() == "drink":
     print("ERROR:INVALID ITEM ENTERED")
@@ -100,14 +101,15 @@ def selectAndPay(Balance1):
     for i in range(6):
       if option.lower() == foodCOPY[i].lower():
         fillerFood.append(foodCOPY[i])
+        Balance1 -= foodPricesInOrderCOPY[i]
+        Balance1 = round(Balance1, 2)
         for i in range(2):
 #checks to see if item inputted matches the stock and if not, end process
           if option.lower() == food[i].lower():
             print("ERROR:ITEM NOT IN STOCK")
+            Balance1 = balanceCopy
             exit()
 #if nothing is bought, end process
-        Balance1 -= foodPricesInOrderCOPY[i]
-        Balance1 = round(Balance1, 2)
   if Balance1 == balanceCopy and foodOrDrink.lower() == "food":
     print("ERROR:INVALID ITEM ENTERED")
     exit()
